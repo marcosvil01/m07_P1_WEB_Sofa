@@ -1,0 +1,43 @@
+<!-- nav.html -->
+<div class="container-fluid">
+  <a class="navbar-brand" href="#">
+    <img src="/files/logo.png" alt="Logo" width="auto" height="50" class="d-inline-block align-text-top">
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-left">
+      <li class="nav-item">
+        <a class="nav-link" href="#sofa_medida">&nbsp; A medida</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#sofa_moderno">Modernos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#sofa_clasico">Clásicos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contacto">&nbsp;Contacto</a>
+      </li>
+    </ul>
+
+    <!-- Nuevos íconos: Catálogo y Cesta de Compras -->
+    <div class="d-flex ms-3">
+      <!-- Ícono de Catálogo -->
+      <a href="#catalogo" class="btn btn-outline-light me-2" title="Catálogo">
+        <i class="fa fa-th text-white" aria-hidden="true"></i>
+        <span class="visually-hidden">Catálogo</span>
+      </a>
+      
+      <!-- Ícono de la Cesta con el contador -->
+      <button class="btn btn-outline-light position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+        <i class="fa fa-shopping-basket text-white" aria-hidden="true"></i>
+        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          0
+        </span>
+        <span class="visually-hidden">Cesta de Compras</span>
+      </button>
+    </div>
+  </div>
+</div>

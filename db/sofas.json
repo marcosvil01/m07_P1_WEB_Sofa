@@ -1,0 +1,113 @@
+[
+    { 
+      "nombre": "Sofá Moderno Minimalista",
+      "descripcion": "Sofá minimalista de diseño contemporáneo, ideal para cualquier espacio moderno.",
+      "tipo": "moderno",
+      "precio": 1200,
+      "precio_antiguo": 1500,
+      "oferta": true,
+      "coleccion": "Primavera 2024",
+      "fecha_salida": "2024-03-01",
+      "imagen": "/files/img/sofa_moderno_minimalista.png"
+    },
+    {
+      "nombre": "Sofá Clásico Victoriano",
+      "descripcion": "Un sofá clásico victoriano con detalles elegantes, ideal para salas de estilo tradicional.",
+      "tipo": "clasico",
+      "precio": 1800,
+      "precio_antiguo": 0,
+      "oferta": false,
+      "coleccion": "Otoño 2023",
+      "fecha_salida": "2023-10-15",
+      "imagen": "/files/img/sofa_clasico_victoriano.png"
+    },
+    {
+      "nombre": "Sofá Modular Expandible",
+      "descripcion": "Sofá modular que se puede reconfigurar para adaptarse a diferentes espacios.",
+      "tipo": "modular",
+      "precio": 2000,
+      "precio_antiguo": 2500,
+      "oferta": true,
+      "coleccion": "Verano 2024",
+      "fecha_salida": "2024-06-10",
+      "imagen": "/files/img/sofa_modular_expandible.png"
+    },
+    {
+      "nombre": "Sofá Retro de los Años 70",
+      "descripcion": "Un sofá retro con tapizado de terciopelo, inspirado en el estilo de los años 70.",
+      "tipo": "retro",
+      "precio": 1500,
+      "precio_antiguo": 1700,
+      "oferta": true,
+      "coleccion": "Otoño 2023",
+      "fecha_salida": "2023-09-20",
+      "imagen": "/files/img/sofa_retro_70.png"
+    },
+    {
+      "nombre": "Sofá Seccional de Lujo",
+      "descripcion": "Sofá seccional de gran tamaño, ideal para familias grandes o espacios amplios.",
+      "tipo": "seccional",
+      "precio": 3500,
+      "precio_antiguo": 0,
+      "oferta": false,
+      "coleccion": "Invierno 2023",
+      "fecha_salida": "2023-11-15",
+      "imagen": "/files/img/sofa_seccional_lujo.png"
+    },
+    {
+      "nombre": "Sofá Chesterfield de Cuero",
+      "descripcion": "Sofá clásico de estilo Chesterfield, tapizado en cuero marrón con detalles capitoné.",
+      "tipo": "clasico",
+      "precio": 2800,
+      "precio_antiguo": 3200,
+      "oferta": true,
+      "coleccion": "Primavera 2023",
+      "fecha_salida": "2023-04-01",
+      "imagen": "/files/img/sofa_chesterfield_cuero.png"
+    },
+    {
+      "nombre": "Sofá Futón Convertible",
+      "descripcion": "Sofá convertible en cama, ideal para espacios pequeños o invitados.",
+      "tipo": "convertible",
+      "precio": 700,
+      "precio_antiguo": 900,
+      "oferta": true,
+      "coleccion": "Verano 2024",
+      "fecha_salida": "2024-07-01",
+      "imagen": "/files/img/sofa_futon_convertible.png"
+    },
+    {
+      "nombre": "Sofá Escandinavo Minimalista",
+      "descripcion": "Sofá de diseño escandinavo, con líneas simples y tapizado en tonos claros.",
+      "tipo": "moderno",
+      "precio": 1300,
+      "precio_antiguo": 0,
+      "oferta": false,
+      "coleccion": "Invierno 2023",
+      "fecha_salida": "2023-12-01",
+      "imagen": "/files/img/sofa_escandinavo_minimalista.png"
+    },
+    {
+      "nombre": "Sofá de Piel Negra",
+      "descripcion": "Sofá moderno de piel negra con detalles metálicos, ideal para espacios sofisticados.",
+      "tipo": "moderno",
+      "precio": 2500,
+      "precio_antiguo": 0,
+      "oferta": false,
+      "coleccion": "Otoño 2024",
+      "fecha_salida": "2024-09-05",
+      "imagen": "/files/img/sofa_piel_negra.png"
+    },
+    {
+      "nombre": "Sofá Modular XL",
+      "descripcion": "Sofá modular extragrande, perfecto para grandes salas y eventos sociales.",
+      "tipo": "modular",
+      "precio": 4000,
+      "precio_antiguo": 4500,
+      "oferta": true,
+      "coleccion": "Verano 2024",
+      "fecha_salida": "2024-08-15",
+      "imagen": "/files/img/sofa_modular_xl.png"
+    }
+  ]
+  

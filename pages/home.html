@@ -1,0 +1,96 @@
+<!-- home.html -->
+<!-- imagen de fondo principal -->
+<div class="Imagen-principal position-relative text-center text-light" >
+  <img src="/files/carousel_images/sofa_1.png" class="img-fluid w-100" alt="Sofás en el hogar" style="max-height: 500px; object-fit: cover;">
+  <div class="ImgPrincipal-overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center">
+    <h1 class="display-3 text-shadow">Bienvenido a la Tienda de Sofás</h1>
+    <p class="lead text-shadow">Encuentra el sofá perfecto para tu hogar con estilo y confort.</p>
+    <a href="#catalogo" class="btn btn-light btn-lg mt-3">Explorar Colección</a>
+  </div>
+</div>
+
+
+<!-- Sección de Ofertas -->
+<div class="container-fluid bg-danger text-light py-5" >
+  <div class="container text-center">
+    <h2 class="mb-4 text-uppercase">¡Ofertas Exclusivas!</h2>
+    <p class="lead mb-5">Aprovecha nuestras ofertas por tiempo limitado y renueva tu sala con estilo.</p>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card bg-light text-dark">
+          <img src="/files/img/sofa_offer_1.png" class="card-img-top" alt="Sofá Oferta 1">
+          <div class="card-body">
+            <h5 class="card-title">Sofá Minimalista</h5>
+            <p class="card-text">50% de descuento por tiempo limitado.</p>
+            <p class="mb-1">
+              <!--texto marcado con linea-->
+              <span class="text-muted text-decoration-line-through">€1200</span>
+              <!--danger color rojo y bold negrita-->
+              <span class="text-danger fw-bold">€600</span>
+            </p>
+            <button class="btn btn-outline-danger comprar-btn" data-nombre="Sofá Minimalista Oferta" data-precio="600" data-imagen="/files/img/sofa_offer_1.png">Comprar ahora</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-light text-dark">
+          <img src="/files/img/sofa_offer_2.png" class="card-img-top" alt="Sofá Oferta 2">
+          <div class="card-body">
+            <h5 class="card-title">Sofá Clásico</h5>
+            <p class="card-text">30% de descuento esta semana.</p>
+            <p class="mb-1">
+              <span class="text-muted text-decoration-line-through">€1500</span>
+              <span class="text-danger fw-bold">€1050</span>
+            </p>
+            <button class="btn btn-outline-warning comprar-btn" data-nombre="Sofá Clásico Oferta" data-precio="1050" data-imagen="/files/img/sofa_offer_2.png">Comprar ahora</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-light text-dark">
+          <img src="/files/img/sofa_offer_3.png" class="card-img-top" alt="Sofá Oferta 3">
+          <div class="card-body">
+            <h5 class="card-title">Sofá Moderno</h5>
+            <p class="card-text">Hasta 40% de descuento en sofás modernos.</p>
+            <p class="mb-1">
+              <span class="text-muted text-decoration-line-through">€2000</span>
+              <span class="text-danger fw-bold">€1200</span>
+            </p>
+            <button class="btn btn-outline-danger comprar-btn" data-nombre="Sofá Moderno Oferta" data-precio="1200" data-imagen="/files/img/sofa_offer_3.png">Comprar ahora</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Sección Lo Último en Sofás -->
+<div class="container my-5">
+  <h2 class="text-center mb-4 text-uppercase">Lo Último en Sofás</h2>
+  <div class="row" id="lo-ultimo-sofas">
+    <!-- Los sofás se cargarán aquí -->
+  </div>
+</div>
+
+
+
+<!-- Sección de Diseño -->
+<div class="container-fluid bg-light py-5">
+  <div class="container text-center">
+    <h2 class="mb-4 text-uppercase">Innovación en Diseño</h2>
+    <p class="lead mb-5">Nuestros sofás no solo están diseñados para brindar comodidad, sino también para ser piezas clave en la decoración de tu hogar.</p>
+    <div class="row text-center">
+      <div class="col-md-6">
+        <img src="/files/img/sofa_design_1.png" class="img-fluid mb-3" alt="Diseño Sofá 1">
+        <h5 class="mb-2">Diseño Minimalista</h5>
+        <p>Perfecto para hogares contemporáneos que buscan sencillez.</p>
+      </div>
+      <div class="col-md-6">
+        <img src="/files/img/sofa_design_2.png" class="img-fluid mb-3" alt="Diseño Sofá 2">
+        <h5 class="mb-2">Diseño Vanguardista</h5>
+        <p>Innovación y modernidad en cada detalle de nuestros sofás.</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<!-- modal.html -->
+<!-- Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="productModalLabel">Detalles del Producto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <img id="modal-product-image" src="" class="img-fluid rounded" alt="Producto">
+              </div>
+              <div class="col-md-6">
+                <h3 id="modal-product-name"></h3>
+                <p id="modal-product-description"></p>
+                <p><strong>Precio:</strong> <span id="modal-product-price"></span></p>
+                <!-- Puedes agregar más detalles según sea necesario -->
+                <div class="mb-3">
+                  <label for="modal-cantidad" class="form-label">Cantidad:</label>
+                  <input type="number" id="modal-cantidad" class="form-control" value="1" min="1">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="add-to-cart-btn" class="btn btn-primary">Agregar a la Cesta</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+</div>

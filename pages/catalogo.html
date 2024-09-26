@@ -1,0 +1,37 @@
+<div class="container my-5">
+    <h1 class="text-center mb-4">Catálogo de Sofás</h1>
+    
+    <!-- Controles de Filtro -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <label for="filterPrecio" class="form-label">Filtrar por Precio:</label>
+            <input type="range" id="filterPrecio" class="form-range" min="0" max="5000" step="100">
+            <div class="d-flex justify-content-between">
+                <span id="precioMinimo">€0</span>
+                <span id="precioMaximo">€5000</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="filterTipo" class="form-label">Filtrar por Tipo:</label>
+            <select id="filterTipo" class="form-select">
+                <option value="">Todos</option>
+                <option value="moderno">Moderno</option>
+                <option value="clasico">Clásico</option>
+                <option value="modular">Modular</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <label for="filterOferta" class="form-label">Solo Ofertas:</label>
+            <input type="checkbox" id="filterOferta" class="form-check-input">
+        </div>
+        <div class="col-md-3">
+            <label for="searchNombre" class="form-label">Buscar por Nombre:</label>
+            <input type="text" id="searchNombre" class="form-control" placeholder="Nombre del sofá">
+        </div>
+    </div>
+
+    <!-- Lista de Sofás -->
+    <div id="catalogo-container" class="row">
+        <!-- Aquí se cargarán los sofás dinámicamente -->
+    </div>
+</div>
