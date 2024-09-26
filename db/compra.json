@@ -4,11 +4,5 @@
         "precio": 1200,
         "cantidad": 1,
         "imagen": "/files/img/sofa_moderno_minimalista.png"
-    },
-    {
-        "nombre": "Sofá Clásico Victoriano",
-        "precio": 1800,
-        "cantidad": 2,
-        "imagen": "/files/img/sofa_clasico_victoriano.png"
     }
 ]
