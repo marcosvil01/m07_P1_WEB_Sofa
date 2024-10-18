@@ -59,6 +59,48 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    function cargarHomeSofas() {
+        const homeContainer = document.getElementById('lo-ultimo-sofas');
+        // Asegúrate de que el selector apunte al contenedor correcto en home.html
+    
+        // Cargar los sofás desde "sofas.json"
+        fetch('/db/sofas.json')
+            .then(response => response.json())
+            .then(data => {
+                // Filtrar los últimos sofás o seleccionar algunos para mostrar
+                const sofasToShow = data.slice(-3); // Mostrar los últimos 3 sofás
+    
+                sofasToShow.forEach((sofa) => {
+                    const sofaCard = document.createElement('div');
+                    sofaCard.classList.add('col-md-4', 'mb-4');
+                    sofaCard.innerHTML = `
+                        <div class="card h-100">
+                            <img src="${sofa.imagen}" class="card-img-top" alt="${sofa.nombre}">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">${sofa.nombre}</h5>
+                                <p class="card-text">${sofa.descripcion}</p>
+                                <button class="btn btn-primary mt-auto comprar-btn" data-nombre="${sofa.nombre}" data-precio="${sofa.precio}" data-imagen="${sofa.imagen}">Comprar</button>
+                            </div>
+                        </div>
+                    `;
+                    homeContainer.appendChild(sofaCard);
+                });
+    
+                // Asignar eventos de compra a los botones
+                homeContainer.querySelectorAll('.comprar-btn').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const nombre = button.getAttribute('data-nombre');
+                        const precio = parseFloat(button.getAttribute('data-precio'));
+                        const imagen = button.getAttribute('data-imagen');
+    
+                        // Abrir el modal con los detalles del producto
+                        abrirModal(nombre, precio, imagen);
+                    });
+                });
+            })
+            .catch(error => console.error('Error al cargar los sofás para home:', error));
+    }
+
     loadPage();
     window.addEventListener("hashchange", loadPage); // Escuchar cambios en el hash
 
@@ -93,6 +135,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 filterPrecio.value = precioMaximo;
 
                 mostrarSofas(sofas);
+
+                // Asignar eventos a los filtros
+                filterPrecio.addEventListener('input', aplicarFiltros);
+                filterTipo.addEventListener('change', aplicarFiltros);
+                filterOferta.addEventListener('change', aplicarFiltros);
+                searchNombre.addEventListener('input', aplicarFiltros);
             })
             .catch(error => console.error('Error al cargar los sofás:', error));
 
@@ -123,26 +171,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 `;
                 catalogoContainer.appendChild(sofaCard);
             });
-
-            // Asignar eventos de compra a los botones
-            document.querySelectorAll('.comprar-btn').forEach(button => {
-                button.addEventListener('click', function() {
-                    const nombre = button.getAttribute('data-nombre');
-                    const precio = parseFloat(button.getAttribute('data-precio'));
-                    const imagen = button.getAttribute('data-imagen');
-
-                    // Abrir el modal con los detalles del producto
-                    abrirModal(nombre, precio, imagen);
-                });
-            });
         }
 
-        // Filtros y búsqueda
-        filterPrecio.addEventListener('input', aplicarFiltros);
-        filterTipo.addEventListener('change', aplicarFiltros);
-        filterOferta.addEventListener('change', aplicarFiltros);
-        searchNombre.addEventListener('input', aplicarFiltros);
-
+        // Función para aplicar los filtros
         function aplicarFiltros() {
             let sofasFiltrados = sofas;
 
@@ -189,6 +220,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function agregarAlCarrito(nombre, precio, imagen, cantidad = 1) {
         const nuevoProducto = { nombre, precio, cantidad, imagen };
     
+        // Enviar el producto al servidor y obtener la ID generada
         fetch('/api/compra', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -197,9 +229,135 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(response => response.json())
         .then(data => {
             console.log(data.message);
-            loadCart();  // Recargar la cesta
+    
+            // Asignar el ID del producto que viene del servidor
+            nuevoProducto.id = data.id;
+    
+            // Agregar el producto con la ID al carrito local
+            cartItems.push(nuevoProducto);
+            guardarCarrito();
+            updateCart();  // Recargar la vista del carrito
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => console.error('Error al agregar el producto:', error));
+    }
+
+
+    // Función para cargar la cesta desde el servidor y actualizar el contenido de la página
+    function loadCart() {
+        fetch('/api/compra')
+            .then(response => response.json())
+            .then(data => {
+                cartItems = data;
+                updateCart(); // Llama a la función para actualizar el carrito en la interfaz
+            })
+            .catch(error => console.error('Error al cargar la cesta:', error));
+    }
+
+    // Función para actualizar la interfaz del carrito
+    function updateCart() {
+        const cartItemsContainer = document.getElementById('cart-items-container');
+        const cartCount = document.getElementById('cart-count');
+        let totalItems = 0;
+        let totalPrice = 0;
+    
+        cartItemsContainer.innerHTML = ''; // Limpiar contenedor
+        cartItems.forEach(item => {
+            totalItems += item.cantidad;
+            totalPrice += item.precio * item.cantidad;
+    
+            const itemRow = document.createElement('div');
+            itemRow.classList.add('d-flex', 'justify-content-between', 'align-items-center', 'mb-3');
+            itemRow.innerHTML = `
+                <div class="d-flex align-items-center">
+                    <img src="${item.imagen}" alt="${item.nombre}" style="width: 50px; height: 50px; margin-right: 10px;">
+                    <strong>${item.nombre}</strong> - €${item.precio} x ${item.cantidad}
+                </div>
+                <div>
+                    <button class="btn btn-sm btn-outline-secondary increment" data-id="${item.id}">+</button>
+                    <button class="btn btn-sm btn-outline-secondary decrement" data-id="${item.id}">-</button>
+                    <button class="btn btn-sm btn-outline-danger remove" data-id="${item.id}">Eliminar</button>
+                </div>
+            `;
+            cartItemsContainer.appendChild(itemRow);
+        });
+    
+        // Actualizar la cantidad total de items en el ícono de la cesta en el nav
+        cartCount.textContent = totalItems;  // Mostrar el número total de items en el carrito
+    
+        document.getElementById('total-price').textContent = `€${totalPrice.toFixed(2)}`;
+    
+        // Asignar eventos a los botones de incremento, decremento y eliminación
+        document.querySelectorAll('.increment').forEach(button => {
+            button.addEventListener('click', function() {
+                const nombre = button.getAttribute('data-nombre');
+                incrementarItem(nombre);
+            });
+        });
+    
+        document.querySelectorAll('.decrement').forEach(button => {
+            button.addEventListener('click', function() {
+                const nombre = button.getAttribute('data-nombre');
+                decrementarItem(nombre);
+            });
+        });
+    
+        // Al asignar eventos para eliminar el producto
+        document.querySelectorAll('.remove').forEach(button => {
+            button.addEventListener('click', function() {
+                const id = button.getAttribute('data-id');
+                eliminarItem(id);  // Llamar a la función con la ID del producto
+            });
+        });
+    }
+
+    // Funciones para manejar el carrito
+    function incrementarItem(nombre) {
+        const item = cartItems.find(item => item.nombre === nombre);
+        if (item) {
+            item.cantidad += 1;
+            guardarCarrito();
+            updateCart();
+        }
+    }
+
+    function decrementarItem(nombre) {
+        const item = cartItems.find(item => item.nombre === nombre);
+        if (item && item.cantidad > 1) {
+            item.cantidad -= 1;
+            guardarCarrito();
+            updateCart();
+        } else {
+            eliminarItem(nombre);
+        }
+    }
+
+    function eliminarItem(id) {
+        fetch(`/api/compra/${id}`, {
+            method: 'DELETE'
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.message);
+    
+            // Actualizar la lista del carrito en el cliente
+            cartItems = cartItems.filter(item => item.id !== id);
+            guardarCarrito();
+            updateCart();  // Actualizar la vista del carrito
+        })
+        .catch(error => console.error('Error al eliminar el producto:', error));
+    }
+
+    function guardarCarrito() {
+        fetch('/api/compra', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(cartItems)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.message);
+        })
+        .catch(error => console.error('Error al guardar el carrito:', error));
     }
 
     // Cargar la cesta cuando la página esté lista

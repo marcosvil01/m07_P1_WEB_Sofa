@@ -1,8 +1,16 @@
 [
+  {
+    "nombre": "Sofá Escandinavo Minimalista",
+    "precio": 1300,
+    "cantidad": 1,
+    "imagen": "http://localhost:3000/files/img/sofa_escandinavo_minimalista.png"
+  },
+  [
     {
-        "nombre": "Sofá Moderno Minimalista",
-        "precio": 1200,
-        "cantidad": 1,
-        "imagen": "/files/img/sofa_moderno_minimalista.png"
+      "nombre": "Sofá Escandinavo Minimalista",
+      "precio": 1300,
+      "cantidad": 1,
+      "imagen": "http://localhost:3000/files/img/sofa_escandinavo_minimalista.png"
     }
+  ]
 ]
