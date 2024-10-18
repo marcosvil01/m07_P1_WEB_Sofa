@@ -1,16 +1,18 @@
 [
   {
-    "nombre": "Sofá Escandinavo Minimalista",
-    "precio": 1300,
+    "nombre": "Sofá Clásico Victoriano",
+    "precio": 1800,
     "cantidad": 1,
-    "imagen": "http://localhost:3000/files/img/sofa_escandinavo_minimalista.png"
+    "imagen": "http://localhost:3000/files/img/sofa_clasico_victoriano.png",
+    "id": "aa772832-1a51-443f-a056-3f9fdc858fd1"
   },
   [
     {
-      "nombre": "Sofá Escandinavo Minimalista",
-      "precio": 1300,
-      "cantidad": 1,
-      "imagen": "http://localhost:3000/files/img/sofa_escandinavo_minimalista.png"
+      "nombre": "Sofá Clásico Victoriano",
+      "precio": 1800,
+      "cantidad": 2,
+      "imagen": "http://localhost:3000/files/img/sofa_clasico_victoriano.png",
+      "id": "aa772832-1a51-443f-a056-3f9fdc858fd1"
     }
   ]
 ]

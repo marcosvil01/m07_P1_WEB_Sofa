@@ -1,0 +1,53 @@
+<div class="container my-5">
+    <h1 class="text-center mb-4">Iniciar Sesión</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="carta p-4 shadow-sm">
+                <form id="loginForm" novalidate>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" required>
+                        <div class="invalid-feedback">
+                            Por favor, introduce un correo electrónico válido.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+                        <div class="invalid-feedback">
+                            Por favor, introduce tu contraseña.
+                        </div>
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Recordarme</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+
+                    <div class="text-center mt-3">
+                        <a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <hr>
+
+                    <p class="text-center">O inicia sesión con:</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <button type="button" class="btn btn-outline-primary w-50">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </button>
+                        <button type="button" class="btn btn-outline-danger w-50">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                    </div>
+
+                    <p class="text-center mt-3">
+                        ¿No tienes una cuenta? <a href="#" class="text-decoration-none">Regístrate aquí</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

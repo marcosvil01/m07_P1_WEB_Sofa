@@ -1,26 +1,28 @@
-/* Ajuste de altura para el carrusel */
+/* --- Cosas del Carrusel --- */
+/* Ajustamos la altura del carrusel */
 #changeButtonCarrousel {
     max-width: 100%;
-    height: 100%; /* Ajusta la altura aquí */
+    height: 100%; /* Puedes ajustar la altura aquí */
     overflow: hidden;
 }
 
-/* Ajuste para las imágenes dentro del carrusel */
+/* Imágenes dentro del carrusel */
 #changeButtonCarrousel .carousel-item img {
-    height: 100%;
     width: 100%;
-    object-fit: cover; /* Las imágenes se ajustan sin distorsión */
+    height: 100%;
+    object-fit: cover; /* Para que las imágenes se vean bien */
     object-position: center;
 }
 
-/* Ajustes para pantallas más pequeñas */
+/* Para pantallas más pequeñas */
 @media (max-width: 768px) {
     #changeButtonCarrousel {
-        height: 300px; /* Menor altura para pantallas pequeñas */
+        height: 300px; /* Menos altura en móviles */
     }
 }
 
-/* Footer correcto */
+/* --- Estilos del Footer --- */
+/* El footer queda abajo del todo */
 footer {
     position: relative;
     bottom: 0;
@@ -28,6 +30,7 @@ footer {
     opacity: 1;
 }
 
+/* --- Header Pequeñito --- */
 /* Estilo para el header pequeño */
 .small-header {
     height: 100px;
@@ -38,19 +41,33 @@ footer {
     align-items: center;
 }
 
-
-/* Fondo transparente */
+/* --- Overlay y Texto --- */
+/* Fondo semi-transparente */
 .ImgPrincipal-overlay {
     background: rgba(0, 0, 0, 0.4);
     color: white;
 }
 
-/* Sombra en el texto */
+/* Sombra en el texto para que resalte */
 .text-shadow {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-/* Efecto hover en las tarjetas */
+/* --- Estilos para las Cartas --- */
+/* Nuestra versión de 'card' se llama 'carta' */
+.carta {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    transition: transform 0.3s;
+}
+
+/* Efecto al pasar el ratón por encima */
+.carta:hover {
+    transform: scale(1.05);
+}
+
+/* Tarjetas de categoría con efecto hover */
 .category-card {
     transition: transform 0.3s;
 }
@@ -59,27 +76,16 @@ footer {
     transform: scale(1.05);
 }
 
-/* Estilos adicionales */
-.text-uppercase {
-    text-transform: uppercase;
-}
-
-.bg-danger {
-    background-color: #ff4a4a !important;
-}
-
-.text-light {
-    color: #fff !important;
-}
-
-/* Efecto hover adicional */
+/* Hover extra para cartas y tarjetas */
 .category-card:hover,
-.card:hover {
+.card:hover,
+.carta:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
 }
 
-
+/* --- Mapa Responsivo --- */
+/* Para que el mapa se ajuste al contenedor */
 .map-resp {
     position: relative;
     padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
@@ -96,6 +102,73 @@ footer {
     width: 100%;
     height: 100%;
 }
-.bg-pink, .navbar-pink {
+
+/* --- Estilos para el Login --- */
+/* Contenedor del login */
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-container .form-control {
+    height: 45px;
+    border-radius: 8px;
+}
+
+.login-container .btn-primary {
+    width: 100%;
+    height: 45px;
+    border-radius: 8px;
+}
+
+.form-text {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-container .social-login {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.login-container .social-login button {
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.social-login .fab {
+    margin-right: 8px;
+}
+
+/* --- Extras --- */
+/* Texto en mayúsculas */
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+/* Fondo rojo para alertas o lo que quieras */
+.bg-danger {
+    background-color: #ff4a4a !important;
+}
+
+/* Texto en color claro */
+.text-light {
+    color: #fff !important;
+}
+
+/* Fondo rosa para ciertas secciones */
+.bg-pink,
+.navbar-pink {
     background-color: rgb(145, 0, 108);
 }
