@@ -1,0 +1,20 @@
+{
+  "name": "m07_p1_web_sofa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^30.0.0-beta.3"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  }
+}
