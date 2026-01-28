@@ -358,4 +358,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Cargar la cesta cuando la página esté lista
     cargarCarrito();
+
+    // Expose functions for testing environments
+    if (typeof window !== 'undefined') {
+        window.agregarAlCarrito = agregarAlCarrito;
+        window.__getCartItems = () => cartItems;
+    }
+
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = {
+            agregarAlCarrito,
+            __getCartItems: () => cartItems,
+        };
+    }
 });
